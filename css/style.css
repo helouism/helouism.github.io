@@ -200,6 +200,7 @@ body {
         bottom: 10px !important;
     }
     .education-year, .experience-date {
+        margin: auto;
         padding: 0.5rem;
         border-radius: 10px;
 
