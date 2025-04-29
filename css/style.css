@@ -199,6 +199,11 @@ body {
         right: 10px !important;
         bottom: 10px !important;
     }
+    .education-year, .experience-date {
+        padding: 0.5rem;
+        border-radius: 10px;
+
+    }
 }
 
 @media (max-width: 767px) {
