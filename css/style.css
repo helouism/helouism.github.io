@@ -70,12 +70,11 @@ body {
 
 .navbar {
     transition: background-color 0.3s ease;
-}
-
-.navbar.scrolled {
     background-color: rgba(45, 52, 54, 0.95) !important;
     backdrop-filter: blur(10px);
 }
+
+
 
 .nav-link {
     color: white !important;
@@ -210,6 +209,10 @@ body {
 @media (max-width: 767px) {
     .display-4 {
         font-size: 2.5rem !important;
+    }
+
+    .hero {
+        transform: translateY(45px);
     }
     
     .hero h2 {
