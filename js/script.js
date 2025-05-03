@@ -131,7 +131,7 @@ $(document).ready(function () {
   }
 
   // Start the typing animation
-  let text = "IT Student & Developer";
+  var text = "IT Fresh Graduate & Web Developer";
   typeWriter(text, 0, function () {
     // Typing complete callback
   });
