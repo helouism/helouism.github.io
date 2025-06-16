@@ -1,481 +1,493 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hendrik Louis Mahdi - Personal Website</title>
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body>
-        <!-- Navbar -->
-        <nav
-            class="navbar navbar-expand-lg fixed-top navbar-dark bg-transparent"
-        >
-            <div class="container">
-                <a class="navbar-brand" href="#">HLM</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#skills">Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#education">Education</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#experience"
-                                >Experience</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
-        <!-- Hero Section -->
-        <section class="hero d-flex align-items-center" id="home">
-            <div class="hero-particles" id="particles-js"></div>
-            <div class="container hero-content">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <h1 class="display-4 fw-bold mb-4">
-                            Hi, I'm Hendrik Louis Mahdi
-                        </h1>
-                        <h2 class="h3 mb-4 animated-text">
-                            IT Fresh Graduate & Web Developer
-                        </h2>
-                        <p class="lead mb-4">
-                            Passionate about creating innovative solutions
-                            through technology
-                        </p>
-                        <a href="#contact" class="btn btn-outline-light btn-lg"
-                            >Get In Touch</a
-                        >
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hendrik Louis Mahdi - Personal Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-gradient" href="#">HLM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold px-3" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center text-white" id="home">
+        <div class="container position-relative">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="mb-4">
+                        <span class="badge bg-light text-dark px-3 py-2 rounded-pill mb-3">
+                            <i class="fas fa-code me-2"></i>Fresh Graduate
+                        </span>
+                    </div>
+                    <h1 class="display-3 fw-bold mb-4 lh-1">
+                        Hi, I'm <span class="text-warning">Hendrik Louis Mahdi</span>
+                    </h1>
+                    <h2 class="h2 mb-4 fw-light opacity-75">
+                        IT Fresh Graduate & Web Developer
+                    </h2>
+                    <p class="lead mb-5 fs-5 opacity-90">
+                        Passionate about creating innovative solutions through technology and building user-friendly
+                        applications that solve real-world problems.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-light btn-lg px-4 py-3 rounded-pill fw-semibold">
+                            <i class="fas fa-envelope me-2"></i>Get In Touch
+                        </a>
+                        <a href="docs/my-cv.pdf"
+                            class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-semibold">
+                            <i class="fas fa-download me-2"></i>Download CV
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section class="section" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h2 class="display-4 mb-4">About Me</h2>
-                        <p class="lead">
-                            I'm a fresh graduate Informatics Engineering student
-                            from Pamulang University specializing in web
-                            development and IT Hardware and Software Support.
-                        </p>
-                        <p>
-                            With a passion for creating innovative solutions, I
-                            focus on building user-friendly applications that
-                            solve real-world problems. My academic journey has
-                            equipped me with strong problem-solving skills and a
-                            deep understanding of modern technologies.
-                        </p>
-                        <div class="mt-4">
-                            <a
-                                href="docs/my-cv.pdf"
-                                class="btn btn-primary me-3"
-                                >Download CV</a
-                            >
-                            <a href="#contact" class="btn btn-outline-primary"
-                                >Contact Me</a
-                            >
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="mb-4">
+                        <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">About Me</span>
+                        <h2 class="display-4 fw-bold mb-4">Turning Ideas Into <span class="text-gradient">Digital
+                                Reality</span></h2>
+                    </div>
+                    <p class="lead text-muted mb-4">
+                        I'm a fresh graduate Informatics Engineering student from Pamulang University specializing in
+                        web development and IT Hardware and Software Support.
+                    </p>
+                    <p class="text-muted mb-4">
+                        With a passion for creating innovative solutions, I focus on building user-friendly applications
+                        that solve real-world problems. My academic journey has equipped me with strong problem-solving
+                        skills and a deep understanding of modern technologies.
+                    </p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle p-2 me-3">
+                                    <i class="fas fa-graduation-cap text-primary"></i>
+                                </div>
+                                <div>
+                                    <small class="text-muted">GPA</small>
+                                    <div class="fw-bold">3.62</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="card skill-card text-center p-4">
-                                    <i
-                                        class="fas fa-code fa-3x mb-3 text-primary"
-                                    ></i>
-                                    <h3 class="h5">Frontend Web Development</h3>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-success bg-opacity-10 rounded-circle p-2 me-3">
+                                    <i class="fas fa-calendar text-success"></i>
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card skill-card text-center p-4">
-                                    <i
-                                        class="fas fa-server fa-3x mb-3 text-primary"
-                                    ></i>
-                                    <h3 class="h5">Backend Web Development</h3>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card skill-card text-center p-4">
-                                    <i
-                                        class="fas fa-microchip fa-3x mb-3 text-primary"
-                                    ></i>
-                                    <h3 class="h5">Hardware Support</h3>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card skill-card text-center p-4">
-                                    <i
-                                        class="fas fa-cloud fa-3x mb-3 text-primary"
-                                    ></i>
-                                    <h3 class="h5">Software Support</h3>
+                                <div>
+                                    <small class="text-muted">Graduated</small>
+                                    <div class="fw-bold">2024</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="section bg-light" id="skills">
-            <div class="container">
-                <h2 class="display-4 text-center mb-5">My Skills</h2>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <h5>HTML/CSS</h5>
-                        <div class="progress mb-4">
-                            <div
-                                class="progress-bar bg-primary"
-                                role="progressbar"
-                                style="width: 90%"
-                            ></div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="card skill-card text-center p-4 h-100 border-0 shadow-sm">
+                                <div class="bg-primary bg-opacity-10 rounded-circle mx-auto p-3 mb-3"
+                                    style="width: 70px; height: 70px;">
+                                    <i class="fas fa-code fa-2x text-primary"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Frontend Development</h5>
+                            </div>
                         </div>
-                        <h5>JavaScript</h5>
-                        <div class="progress mb-4">
-                            <div
-                                class="progress-bar bg-primary"
-                                role="progressbar"
-                                style="width: 85%"
-                            ></div>
+                        <div class="col-6">
+                            <div class="card skill-card text-center p-4 h-100 border-0 shadow-sm">
+                                <div class="bg-success bg-opacity-10 rounded-circle mx-auto p-3 mb-3"
+                                    style="width: 70px; height: 70px;">
+                                    <i class="fas fa-server fa-2x text-success"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Backend Development</h5>
+                            </div>
                         </div>
-                        <h5>Python</h5>
-                        <div class="progress mb-4">
-                            <div
-                                class="progress-bar bg-primary"
-                                role="progressbar"
-                                style="width: 80%"
-                            ></div>
+                        <div class="col-6">
+                            <div class="card skill-card text-center p-4 h-100 border-0 shadow-sm">
+                                <div class="bg-warning bg-opacity-10 rounded-circle mx-auto p-3 mb-3"
+                                    style="width: 70px; height: 70px;">
+                                    <i class="fas fa-microchip fa-2x text-warning"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Hardware Support</h5>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>React</h5>
-                        <div class="progress mb-4">
-                            <div
-                                class="progress-bar bg-primary"
-                                role="progressbar"
-                                style="width: 75%"
-                            ></div>
-                        </div>
-                        <h5>PHP</h5>
-                        <div class="progress mb-4">
-                            <div
-                                class="progress-bar bg-primary"
-                                role="progressbar"
-                                style="width: 70%"
-                            ></div>
-                        </div>
-                        <h5>SQL</h5>
-                        <div class="progress mb-4">
-                            <div
-                                class="progress-bar bg-primary"
-                                role="progressbar"
-                                style="width: 85%"
-                            ></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="section" id="projects">
-            <div class="container">
-                <h2 class="display-4 text-center mb-5">My Projects</h2>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card project-card">
-                            <img
-                                src="assets/laptop-screenshot.webp"
-                                class="card-img-top"
-                                alt="Project 1"
-                            />
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    Laptop Recommender System
-                                </h5>
-                                <p class="card-text">
-                                    A full-stack web application that give user
-                                    laptop recommendation. Built with Javascript
-                                    & jQuery, PHP, Bootstrap, and MySQL
-                                </p>
-                                <a
-                                    href="https://github.com/helouism/rekomendasi-laptop"
-                                    class="btn btn-primary"
-                                    >Source Code</a
-                                >
-                                <a
-                                    href="https://blegasul.serv00.net/"
-                                    class="btn btn-primary"
-                                    >Live Demo</a
-                                >
+                        <div class="col-6">
+                            <div class="card skill-card text-center p-4 h-100 border-0 shadow-sm">
+                                <div class="bg-info bg-opacity-10 rounded-circle mx-auto p-3 mb-3"
+                                    style="width: 70px; height: 70px;">
+                                    <i class="fas fa-cloud fa-2x text-info"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Software Support</h5>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Education Section -->
-        <section class="section bg-light" id="education">
-            <div class="container">
-                <h2 class="display-4 text-center mb-5">Education</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-card card shadow-sm">
-                                    <div class="card-body">
-                                        <div
-                                            class="d-flex justify-content-between"
-                                        >
-                                            <h4 class="fw-bold">
-                                                Bachelor of Informatics
-                                                Engineering
-                                            </h4>
-                                            <span
-                                                class="badge bg-primary education-year"
-                                                >2020 - 2024</span
-                                            >
+    <!-- Skills Section -->
+    <section class="section-bg-alt py-5" id="skills">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">My Skills</span>
+                <h2 class="display-4 fw-bold">Technical <span class="text-gradient">Expertise</span></h2>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold">HTML/CSS</span>
+                            <span class="badge bg-primary">90%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold">JavaScript</span>
+                            <span class="badge bg-primary">85%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold">Python</span>
+                            <span class="badge bg-primary">80%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold">React</span>
+                            <span class="badge bg-primary">75%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold">PHP</span>
+                            <span class="badge bg-primary">70%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold">SQL</span>
+                            <span class="badge bg-primary">85%</span>
+                        </div>
+                        <div class="progress progress-modern">
+                            <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-5" id="projects">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">Portfolio</span>
+                <h2 class="display-4 fw-bold">Featured <span class="text-gradient">Projects</span></h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Laptop Project -->
+                <div class="col-lg-6 col-xl-5">
+                    <div class="card project-card border-0 shadow-lg h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/laptop-screenshot.webp" class="card-img-top"
+                                alt="Laptop Recommender System" style="height: 250px; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-success px-3 py-2">Full-Stack</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold mb-3">Laptop Recommender System</h5>
+                            <p class="card-text text-muted mb-4">
+                                A comprehensive full-stack web application that provides intelligent laptop
+                                recommendations based on user preferences and requirements.
+                            </p>
+                            <div class="mb-4">
+                                <span class="badge bg-primary bg-opacity-10 text-primary me-2 mb-2">JavaScript</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary me-2 mb-2">jQuery</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary me-2 mb-2">PHP</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary me-2 mb-2">Bootstrap</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary me-2 mb-2">MySQL</span>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <a href="https://github.com/helouism/rekomendasi-laptop"
+                                    class="btn btn-outline-primary rounded-pill px-4">
+                                    <i class="fab fa-github me-2"></i>Source Code
+                                </a>
+                                <a href="https://blegasul.serv00.net/" class="btn btn-gradient rounded-pill px-4">
+                                    <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section-bg-alt py-5" id="education">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">Education</span>
+                <h2 class="display-4 fw-bold">Academic <span class="text-gradient">Journey</span></h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h4 class="fw-bold mb-1">Bachelor of Informatics Engineering</h4>
+                                            <h6 class="text-primary mb-0">Pamulang University - South Tangerang,
+                                                Indonesia</h6>
                                         </div>
-                                        <h5 class="text-primary">
-                                            Pamulang University - South
-                                            Tangerang, Indonesia
-                                        </h5>
-                                        <p class="mt-3 mb-0">
-                                            <span class="text-primary fw-bold"
-                                                >GPA: 3.62</span
-                                            >
-                                        </p>
-                                        <div class="education-icon">
-                                            <i
-                                                class="fas fa-graduation-cap"
-                                            ></i>
-                                        </div>
+                                        <span class="badge bg-primary px-3 py-2">2020 - 2024</span>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-card card shadow-sm">
-                                    <div class="card-body">
-                                        <div
-                                            class="d-flex justify-content-between"
-                                        >
-                                            <h4 class="fw-bold">
-                                                Computer Network Engineering
-                                            </h4>
-                                            <span
-                                                class="badge bg-primary education-year"
-                                                >2016 - 2019</span
-                                            >
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-success bg-opacity-10 rounded-circle p-2 me-3">
+                                            <i class="fas fa-trophy text-success"></i>
                                         </div>
-                                        <h5 class="text-primary">
-                                            Prima Unggul Vocational High School
-                                            - South Tangerang, Indonesia
-                                        </h5>
-                                        <p class="mt-3 mb-0">
-                                            Specialized in computer networking
-                                            technologies and IT fundamentals
-                                        </p>
-                                        <div class="education-icon">
-                                            <i class="fas fa-school"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="section" id="experience">
-            <div class="container">
-                <h2 class="display-4 text-center mb-5">Experience</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="timeline">
-                            <!-- Network Admin -->
-                            <div class="timeline-item">
-                                <div class="timeline-card card shadow-sm">
-                                    <div class="card-body">
-                                        
-                                        <div class="d-flex justify-content-between">
-                                            <h4 class="fw-bold">
-                                                Network Administrator
-                                            </h4>
-                                            <span class="badge bg-secondary experience-date">February 2018 - March 2018</span>
-                                        </div>
-                                        <h5 class="text-primary">
-                                            Indonesia University of Education -
-                                            Bandung, Indonesia
-                                        </h5>
-                                        <ul class="mt-3 experience-list">
-                                            <li>
-                                                Gained hands-on experience with
-                                                networking fundamentals,
-                                                including TCP/IP protocols,
-                                                network topologies, and
-                                                troubleshooting techniques
-                                            </li>
-                                            <li>
-                                                Assisted in configuring and
-                                                maintaining routers and
-                                                switches, enhancing network
-                                                performance and reliability
-                                            </li>
-                                            <li>
-                                                Contributed to server
-                                                administration tasks, including
-                                                user management, system updates,
-                                                and performance monitoring
-                                            </li>
-                                            <li>
-                                                Learned about firewall
-                                                configuration and management,
-                                                helping to strengthen network
-                                                security
-                                            </li>
-                                            <li>
-                                                Developed a solid foundation in
-                                                IT infrastructure, combining
-                                                theoretical knowledge with
-                                                practical applications in a
-                                                real-world environment
-                                            </li>
-                                        </ul>
-                                        <div class="experience-icon">
-                                            <i class="fas fa-network-wired"></i>
-                                        </div>
-
-                                       
-                                    </div>
-                                </div>
-                            </div>
-
-                        <!-- Web Dev Intern -->
-                            <div class="timeline-item">
-                                <div class="timeline-card card shadow-sm">
-                                    <div class="card-body">
-                                       
-                                        <div class="d-flex justify-content-between">
-                                            <h4 class="fw-bold">
-                                                Web Development Intern
-                                            </h4>
-                                            <span class="badge bg-secondary experience-date">March 2023 - June 2023</span>
-                                        </div>
-                                        <h5 class="text-primary">
-                                            PT Dinamika Tiara Universal -
-                                            Tangerang, Indonesia
-                                        </h5>
-                                        <ul class="mt-3 experience-list">
-                                            <li>
-                                                Designed the website layout and user interface using modern HTML, CSS, and JavaScript practices to ensure a seamless user experience.
-                                            </li>
-                                            <li>
-                                               Utilized responsive web design techniques to make the website fully functional across devices (desktop, tablet, mobile).
-                                            </li>
-                                        </ul>
-                                        <div class="experience-icon">
-                                            <i class="fa-solid fa-globe"></i>
+                                        <div>
+                                            <small class="text-muted">GPA</small>
+                                            <div class="fw-bold text-success fs-5">3.62</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section class="section bg-light" id="contact">
-            <div class="container">
-                <h2 class="display-4 text-center mb-5">Get In Touch</h2>
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card shadow-sm"></div>
-                        <div class="text-center mt-4">
-                            <a
-                                href="https://github.com/helouism"
-                                class="social-icon"
-                                ><i class="fab fa-github"></i
-                            ></a>
-                            <a
-                                href="https://www.linkedin.com/in/hendrik-louis-mahdi-b0ba67178/"
-                                class="social-icon"
-                                ><i class="fab fa-linkedin"></i
-                            ></a>
-                            <a
-                                href="mailto:hendrikmahdi@gmail.com"
-                                class="social-icon"
-                                ><i class="fas fa-envelope"></i
-                            ></a>
-                            <a
-                                href="https://wa.me/6285156561231"
-                                class="social-icon"
-                                ><i class="fab fa-whatsapp"></i
-                            ></a>
+                        <div class="timeline-item">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h4 class="fw-bold mb-1">Computer Network Engineering</h4>
+                                            <h6 class="text-primary mb-0">Prima Unggul Vocational High School - South
+                                                Tangerang, Indonesia</h6>
+                                        </div>
+                                        <span class="badge bg-secondary px-3 py-2">2016 - 2019</span>
+                                    </div>
+                                    <p class="text-muted mb-0">
+                                        Specialized in computer networking technologies, IT fundamentals, and technical
+                                        infrastructure management.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="bg-dark text-white py-4">
-            <div class="container text-center">
-                <p class="mb-0">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                    Hendrik Louis Mahdi. All rights reserved.
-                </p>
+    <!-- Experience Section -->
+    <section class="py-5" id="experience">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">Experience</span>
+                <h2 class="display-4 fw-bold">Professional <span class="text-gradient">Experience</span></h2>
             </div>
-        </footer>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h4 class="fw-bold mb-1">Web Development Intern</h4>
+                                            <h6 class="text-primary mb-0">PT Dinamika Tiara Universal - Tangerang,
+                                                Indonesia</h6>
+                                        </div>
+                                        <span class="badge bg-success px-3 py-2">March 2023 - June 2023</span>
+                                    </div>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2">
+                                            <i class="fas fa-check-circle text-success me-2"></i>
+                                            Designed modern website layouts and user interfaces using HTML, CSS, and
+                                            JavaScript
+                                        </li>
+                                        <li class="mb-0">
+                                            <i class="fas fa-check-circle text-success me-2"></i>
+                                            Implemented responsive web design techniques for cross-device compatibility
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-        <!-- Scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-        <script src="js/script.js"></script>
-    </body>
+                        <div class="timeline-item">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body p-4">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h4 class="fw-bold mb-1">Network Administrator</h4>
+                                            <h6 class="text-primary mb-0">Indonesia University of Education - Bandung,
+                                                Indonesia</h6>
+                                        </div>
+                                        <span class="badge bg-info px-3 py-2">February 2018 - March 2018</span>
+                                    </div>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2">
+                                            <i class="fas fa-check-circle text-success me-2"></i>
+                                            Gained hands-on experience with TCP/IP protocols and network troubleshooting
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="fas fa-check-circle text-success me-2"></i>
+                                            Assisted in configuring routers and switches for optimal network performance
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="fas fa-check-circle text-success me-2"></i>
+                                            Contributed to server administration and system monitoring tasks
+                                        </li>
+                                        <li class="mb-0">
+                                            <i class="fas fa-check-circle text-success me-2"></i>
+                                            Learned firewall configuration and network security best practices
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-bg-alt py-5" id="contact">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">Contact</span>
+                <h2 class="display-4 fw-bold">Let's <span class="text-gradient">Connect</span></h2>
+                <p class="lead text-muted">Ready to start your next project? Let's work together!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center flex-wrap gap-3 mb-4">
+                            <a href="https://github.com/helouism" class="social-icon" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/hendrik-louis-mahdi-b0ba67178/" class="social-icon"
+                                title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:hendrikmahdi@gmail.com" class="social-icon" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://wa.me/6285156561231" class="social-icon" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="row g-4 text-center">
+                            <div class="col-md-4">
+                                <div class="p-3">
+                                    <div class="bg-primary bg-opacity-10 rounded-circle mx-auto p-3 mb-3"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="fas fa-envelope fa-lg text-primary"></i>
+                                    </div>
+                                    <h6 class="fw-bold mb-1">Email</h6>
+                                    <small class="text-muted">hendrikmahdi@gmail.com</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3">
+                                    <div class="bg-success bg-opacity-10 rounded-circle mx-auto p-3 mb-3"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="fab fa-whatsapp fa-lg text-success"></i>
+                                    </div>
+                                    <h6 class="fw-bold mb-1">WhatsApp</h6>
+                                    <small class="text-muted">+62 851-5656-1231</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3">
+                                    <div class="bg-info bg-opacity-10 rounded-circle mx-auto p-3 mb-3"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="fas fa-map-marker-alt fa-lg text-info"></i>
+                                    </div>
+                                    <h6 class="fw-bold mb-1">Location</h6>
+                                    <small class="text-muted">Tangerang Selatan, Banten</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+
 </html>
