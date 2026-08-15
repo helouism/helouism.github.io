@@ -163,22 +163,32 @@ writes the fix"). Two buttons: *View Projects* (contained) and *Download CV*
 
 ### About
 
-Rewritten from the existing bio with infrastructure-first framing. Retains the
-Pamulang University Informatics Engineering background and 2024 graduation, but
-these are supporting facts rather than the headline. The "Fresh Graduate" badge
-is removed — it is two years stale.
+Rewritten from the existing bio with infrastructure-first framing, leading with
+the current Lintas Media Danawa role: someone who keeps enterprise systems and
+applications running, and who reaches for logs, queries, and code rather than
+just reassigning the ticket. Retains the Pamulang University Informatics
+Engineering background and 2024 graduation, but as supporting facts rather than
+the headline. The "Fresh Graduate" badge is removed — it is two years stale.
 
 ### Skills
 
 Percentage progress bars are removed. Self-assigned numbers are unverifiable
 and read as filler to the infrastructure and sysadmin audience this site now
-targets. Replaced with three groups of monospace chips:
+targets. Replaced with four groups of monospace chips, ordered so the
+support/infra evidence leads:
 
-- **Support & Infra** — L1 helpdesk, TCP/IP, routers & switches, firewall
-  configuration, Linux, hardware & software support
-- **Build** — PHP, CodeIgniter 4, Laravel, JavaScript, React, Python,
-  SQL/MySQL
-- **Tools** — Git, Bootstrap, jQuery
+- **Support & Operations** — L1 helpdesk, ServiceDesk Plus, eBesha CRM, SLA
+  management, incident triage & escalation, server/network/application
+  monitoring
+- **Systems & Infrastructure** — Windows, Linux, macOS, VMware, Proxmox,
+  SSH/FTP/SFTP, TCP/IP, routers & switches, firewall configuration, hardware
+  & software support
+- **Databases** — MySQL, PostgreSQL, SQL, Navicat
+- **Development** — PHP, Laravel, CodeIgniter 4, JavaScript, React, Python,
+  Git, log analysis & debugging
+
+Every chip here is backed by something visible elsewhere on the page — the
+current role, a prior role, or a shipped project. Nothing is aspirational.
 
 ### Projects
 
@@ -197,10 +207,25 @@ Both existing projects migrate with their real content:
 
 ### Experience
 
-1. **L1 IT Support (Infra / App / Helpdesk)** — current role. *Company, start
-   date, and responsibilities are not yet supplied.* Scaffolded with an
-   explicit `TODO` marker in `content/experience.ts` so the build succeeds
-   while the gap stays visible. Must be filled before merging to `master`.
+1. **L1 IT Support / Helpdesk — Infra & Apps** — Lintas Media Danawa,
+   Depok, West Java. Contract, on-site. Oct 2025 – Present.
+
+   First-level technical support and infrastructure monitoring for internal
+   users and external clients: diagnosing, resolving, and escalating hardware,
+   software, network, and enterprise application issues.
+
+   - Manage and track support tickets in ServiceDesk Plus and eBesha CRM to
+     meet SLA targets
+   - Troubleshoot across Windows, Linux, and macOS environments
+   - Run database checks and queries against MySQL and PostgreSQL
+   - Support Laravel/PHP web applications by analyzing logs and identifying
+     bugs
+   - Proactively monitor servers, networks, and applications to detect and
+     report anomalies
+   - Communicate status to users and escalate to L2/L3 when needed
+
+   This is the lead experience entry and the anchor of the site's positioning.
+   It is rendered first and given more visual weight than the older roles.
 2. **Web Development Intern** — PT Dinamika Tiara Universal, Tangerang.
    Mar 2023 – Jun 2023. Website layouts and UI in HTML/CSS/JS; responsive
    design for cross-device compatibility.
