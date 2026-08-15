@@ -142,6 +142,18 @@ any entrance animation respect `prefers-reduced-motion`.
 
 ## 6. Content Plan
 
+### Navigation
+
+Brand `helouism` on the left. Links: About, Skills, Projects, Experience,
+Contact — each scrolling to its section anchor. Education is reachable by
+scroll but omitted from the nav to keep it to five items. A *Resume* button
+(→ `/docs/my-cv.pdf`) sits at the right as the CTA, next to the theme toggle.
+Below the `md` breakpoint the links collapse into a Drawer; the toggle and CTA
+stay visible.
+
+Sections render in this order: Hero, About, Skills, Projects, Experience,
+Education, Contact.
+
 ### Hero
 
 Title: **IT Support & Infrastructure**. Subhead micro-copy positions
