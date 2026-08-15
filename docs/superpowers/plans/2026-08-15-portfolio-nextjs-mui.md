@@ -6,7 +6,9 @@
 
 **Architecture:** Next.js 15 App Router with `output: 'export'`, rendering one route (`/`) composed of section components. Content lives in typed TypeScript modules so a missing field fails the build. MUI supplies the design system through a single theme with light/dark color schemes; `AppRouterCacheProvider` and `InitColorSchemeScript` prevent style and theme flashes on first paint.
 
-**Tech Stack:** Next.js 15, React 19, TypeScript, MUI v7 (`@mui/material`, `@mui/icons-material`, `@mui/material-nextjs`), Emotion, Vitest + React Testing Library, GitHub Actions → GitHub Pages.
+**Tech Stack:** Next.js 16.3.1, React 19.2, TypeScript, MUI v9.3 (`@mui/material`, `@mui/icons-material`, `@mui/material-nextjs`), Emotion, Vitest 4 + React Testing Library, GitHub Actions → GitHub Pages.
+
+> **Version note (recorded during Task 1).** The plan was drafted against Next 15 / MUI v7; a fresh `npm install` resolved Next 16.3.1 and MUI v9.3.1. Ruling: keep the newer stack. Every API this plan relies on was verified present in v9 — `cssVariables.colorSchemeSelector`, `colorSchemes`, `InitColorSchemeScript` (default attribute `data-mui-color-scheme`), and `useColorScheme` (re-exported from `@mui/material/styles`). The only consequent change is the App Router cache provider entry point, which tracks the **Next** major: `@mui/material-nextjs/v16-appRouter`.
 
 **Spec:** `docs/superpowers/specs/2026-08-15-portfolio-nextjs-mui-design.md`
 
@@ -541,7 +543,7 @@ export default theme;
 Run: `npm run typecheck && npm test`
 Expected: no type errors, all tests pass.
 
-If `cssVariables` or `colorSchemes` produce type errors, the installed MUI is v5. Run `npm install @mui/material@^7 @mui/material-nextjs@^7` and re-run.
+MUI v9.3.1 is installed and both `cssVariables` and `colorSchemes` are confirmed present in its type definitions, so this should compile as written. If it does not, report the exact type error rather than downgrading MUI.
 
 - [ ] **Step 11: Commit**
 
@@ -1656,7 +1658,7 @@ export default function ThemeRegistry({ children }: { children: ReactNode }) {
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { Inter, JetBrains_Mono } from 'next/font/google';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import Box from '@mui/material/Box';
 import ThemeRegistry from '@/components/ThemeRegistry';
@@ -1703,7 +1705,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 }
 ```
 
-If `@mui/material-nextjs/v15-appRouter` does not resolve, list the package's exports with `ls node_modules/@mui/material-nextjs/` and use the highest available `vNN-appRouter` entry point.
+The entry point must match the installed **Next** major, not the MUI major. Next 16.3.1 is installed, so it is `v16-appRouter`. (Verified present: the package ships `v13`/`v14`/`v15`/`v16` app-router entry points.)
 
 - [ ] **Step 9: Run the tests**
 
