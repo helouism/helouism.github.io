@@ -1,17 +1,22 @@
 'use client';
 
-import { createTheme } from '@mui/material/styles';
+import { createTheme, type Theme, type CssVarsTheme } from '@mui/material/styles';
 import { palette } from './palette';
 
 export const COLOR_SCHEME_ATTRIBUTE = 'data-mui-color-scheme';
 
+// `createTheme`'s public type signature returns plain `Theme`, but passing
+// `cssVariables`/`colorSchemes` (as done below) makes it return a theme that
+// also carries `CssVarsTheme` (e.g. the resolved `colorSchemes` map) at
+// runtime. This annotation makes that shape visible to consumers/tests too.
 const theme = createTheme({
   cssVariables: { colorSchemeSelector: COLOR_SCHEME_ATTRIBUTE },
   colorSchemes: {
     dark: {
       palette: {
         mode: 'dark',
-        primary: { main: palette.dark.accent, contrastText: '#04160C' },
+        primary: { main: palette.dark.accent, contrastText: palette.dark.accentContrast },
+        secondary: { main: palette.dark.accent, contrastText: palette.dark.accentContrast },
         background: {
           default: palette.dark.bg,
           paper: palette.dark.paper,
@@ -26,7 +31,8 @@ const theme = createTheme({
     light: {
       palette: {
         mode: 'light',
-        primary: { main: palette.light.accent, contrastText: '#FFFFFF' },
+        primary: { main: palette.light.accent, contrastText: palette.light.accentContrast },
+        secondary: { main: palette.light.accent, contrastText: palette.light.accentContrast },
         background: {
           default: palette.light.bg,
           paper: palette.light.paper,
@@ -95,6 +101,6 @@ const theme = createTheme({
       },
     },
   },
-});
+}) as Theme & CssVarsTheme;
 
 export default theme;

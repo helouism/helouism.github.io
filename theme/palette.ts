@@ -4,6 +4,7 @@ export type Scheme = {
   text: string;
   textSecondary: string;
   accent: string;
+  accentContrast: string;
   divider: string;
 };
 
@@ -14,6 +15,7 @@ export const palette: { dark: Scheme; light: Scheme } = {
     text: '#E6E8E6',
     textSecondary: '#9AA09A',
     accent: '#00E676',
+    accentContrast: '#04160C',
     divider: 'rgba(230,232,230,0.10)',
   },
   light: {
@@ -22,6 +24,7 @@ export const palette: { dark: Scheme; light: Scheme } = {
     text: '#16181A',
     textSecondary: '#5A6169',
     accent: '#007A3D',
+    accentContrast: '#FFFFFF',
     divider: 'rgba(22,24,26,0.10)',
   },
 };

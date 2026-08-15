@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { contrastRatio } from '@/theme/contrast';
 import { palette } from '@/theme/palette';
+import theme from '@/theme/theme';
 
 const AA_NORMAL = 4.5;
 const AA_LARGE = 3;
@@ -48,5 +49,31 @@ describe('light scheme contrast', () => {
 describe('palette regressions', () => {
   it('rejects the bright green as a light-mode accent', () => {
     expect(contrastRatio('#00E676', '#FFFFFF')).toBeLessThan(AA_LARGE);
+  });
+});
+
+describe('accent-filled button contrast', () => {
+  it('dark scheme: accentContrast text on accent background passes AA', () => {
+    const s = palette.dark;
+    expect(contrastRatio(s.accentContrast, s.accent)).toBeGreaterThanOrEqual(AA_NORMAL);
+  });
+
+  it('light scheme: accentContrast text on accent background passes AA', () => {
+    const s = palette.light;
+    expect(contrastRatio(s.accentContrast, s.accent)).toBeGreaterThanOrEqual(AA_NORMAL);
+  });
+});
+
+describe('theme secondary alias', () => {
+  it('dark scheme: secondary.main equals primary.main', () => {
+    expect(theme.colorSchemes?.dark?.palette?.secondary?.main).toBe(
+      theme.colorSchemes?.dark?.palette?.primary?.main,
+    );
+  });
+
+  it('light scheme: secondary.main equals primary.main', () => {
+    expect(theme.colorSchemes?.light?.palette?.secondary?.main).toBe(
+      theme.colorSchemes?.light?.palette?.primary?.main,
+    );
   });
 });
