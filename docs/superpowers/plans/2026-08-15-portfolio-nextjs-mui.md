@@ -2797,6 +2797,7 @@ export default function Contact() {
                   </Typography>
                   <Link
                     href={s.href}
+                    aria-label={`${s.label}: ${s.value}`}
                     target={s.kind === 'email' ? undefined : '_blank'}
                     rel={s.kind === 'email' ? undefined : 'noopener noreferrer'}
                     underline="hover"
@@ -2854,6 +2855,12 @@ export default function Contact() {
 ```
 
 The accessible name of the copy button is "Copy email address", which matches the test's `/copy email/i`. The Snackbar message "Copied to clipboard" matches `/copied/i`.
+
+The `aria-label` on each contact `Link` is load-bearing, not decoration. The
+visible text is just the value (`helouism`, `hendrik-louis-mahdi`), which gives
+a screen-reader user no idea where the link goes; the label supplies the
+destination. It is also what makes the test's `getByRole('link', { name: /GitHub/i })`
+query resolve. Do not remove it.
 
 - [ ] **Step 4: Wire into `app/page.tsx`** — the file is now complete
 
