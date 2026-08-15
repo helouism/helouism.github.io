@@ -103,11 +103,17 @@ that goes away).
 | background paper | `#0E110E` | `#FFFFFF` |
 | text primary | `#E6E8E6` | `#16181A` |
 | text secondary | `#9AA09A` | `#5A6169` |
-| accent (primary) | `#00E676` | `#00A152` |
+| accent (primary) | `#00E676` | `#007A3D` |
 | divider | `rgba(230,232,230,0.10)` | `rgba(22,24,26,0.10)` |
 
 The light-mode accent is darkened specifically to hold WCAG AA contrast against
-white; `#00E676` on white does not pass.
+white. `#00E676` on white measures 1.44:1 — unusable. An earlier draft of this
+spec proposed `#00A152`, but that measures 3.38:1, which clears the 3:1 bar for
+large text and UI components while still failing the 4.5:1 bar for body text.
+`#007A3D` measures 5.45:1 and passes for all text sizes.
+
+These ratios are enforced by unit tests over the palette, not asserted by hand,
+so a future palette edit that breaks contrast fails the build.
 
 ### Typography
 
