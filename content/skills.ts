@@ -10,7 +10,7 @@ export const skillGroups: SkillGroup[] = [
       'SLA Management',
       'Incident Triage',
       'Escalation (L2/L3)',
-      'Monitoring',
+      'Server/Network/App Monitoring',
     ],
   },
   {
@@ -25,7 +25,7 @@ export const skillGroups: SkillGroup[] = [
       'TCP/IP',
       'Routers & Switches',
       'Firewall Config',
-      'Hardware Support',
+      'Hardware & Software Support',
     ],
   },
   {
@@ -42,7 +42,7 @@ export const skillGroups: SkillGroup[] = [
       'React',
       'Python',
       'Git',
-      'Log Analysis',
+      'Log Analysis & Debugging',
     ],
   },
 ];

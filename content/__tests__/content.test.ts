@@ -35,8 +35,11 @@ describe('projects', () => {
   });
 
   it('gives every image non-empty alt text that is not the title of another project', () => {
+    const titles = projects.map((p) => p.title);
     for (const p of projects) {
       expect(p.alt.trim().length).toBeGreaterThan(0);
+      const otherTitles = titles.filter((t) => t !== p.title);
+      expect(otherTitles).not.toContain(p.alt);
     }
   });
 });

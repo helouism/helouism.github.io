@@ -5,7 +5,7 @@ export const projects: Project[] = [
     slug: 'rekomendasi-laptop',
     title: 'Laptop Recommender System',
     description:
-      'A full-stack web application that recommends laptops based on user preferences and requirements, scoring candidates against weighted criteria.',
+      'A full-stack web application that recommends laptops based on user preferences and requirements.',
     image: '/assets/laptop-screenshot.webp',
     alt: 'Screenshot of the Laptop Recommender System interface',
     stack: ['JavaScript', 'jQuery', 'PHP', 'Bootstrap', 'MySQL'],
@@ -23,7 +23,6 @@ export const projects: Project[] = [
     stack: [
       'CodeIgniter 4',
       'CodeIgniter Shield',
-      'PHP',
       'JavaScript',
       'QuillJS',
       'jQuery',
