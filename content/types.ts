@@ -16,7 +16,10 @@ export type Project = {
   image: string;
   alt: string;
   stack: string[];
-  repo: string;
+  // Optional: not every shipped project has public source. Omitting it is a
+  // deliberate statement the card renders ("Source private"), not a gap —
+  // an empty string here would render a dead button instead.
+  repo?: string;
   demo?: string;
   featured: boolean;
 };

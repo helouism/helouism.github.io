@@ -56,18 +56,20 @@ export default function ProjectCard({ project }: { project: Project }) {
           ))}
         </Box>
 
-        <Box sx={{ display: 'flex', gap: 1.5, mt: 'auto', flexWrap: 'wrap' }}>
-          <Button
-            size="small"
-            variant="outlined"
-            startIcon={<GitHubIcon />}
-            href={project.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Source code for ${project.title}`}
-          >
-            Source
-          </Button>
+        <Box sx={{ display: 'flex', gap: 1.5, mt: 'auto', flexWrap: 'wrap', alignItems: 'center' }}>
+          {project.repo && (
+            <Button
+              size="small"
+              variant="outlined"
+              startIcon={<GitHubIcon />}
+              href={project.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Source code for ${project.title}`}
+            >
+              Source
+            </Button>
+          )}
           {project.demo && (
             <Button
               size="small"
@@ -80,6 +82,14 @@ export default function ProjectCard({ project }: { project: Project }) {
             >
               Live Demo
             </Button>
+          )}
+          {!project.repo && (
+            <Typography
+              component="span"
+              sx={{ color: 'text.secondary', fontSize: '0.8125rem', fontStyle: 'italic' }}
+            >
+              Source private
+            </Typography>
           )}
         </Box>
       </CardContent>

@@ -8,14 +8,38 @@ import { socials } from '@/content/socials';
 import { navItems, SECTION_ORDER } from '@/content/nav';
 
 describe('projects', () => {
-  it('has both migrated projects', () => {
+  it('has both projects', () => {
     expect(projects).toHaveLength(2);
   });
 
-  it('gives every project a non-empty stack and a repo link', () => {
+  it('gives every project a non-empty stack', () => {
     for (const p of projects) {
       expect(p.stack.length).toBeGreaterThan(0);
-      expect(p.repo).toMatch(/^https:\/\//);
+    }
+  });
+
+  it('gives every project somewhere to go', () => {
+    // A card with neither a repo nor a demo is a dead end. `repo` is optional
+    // because TheFaucet's source is private, but that must not degrade into
+    // "no links at all" for some future project that forgets both.
+    for (const p of projects) {
+      expect(p.repo ?? p.demo, `${p.title} has no repo and no demo`).toBeDefined();
+    }
+  });
+
+  it('makes every link it does carry an https URL', () => {
+    for (const p of projects) {
+      if (p.repo) expect(p.repo).toMatch(/^https:\/\//);
+      if (p.demo) expect(p.demo).toMatch(/^https:\/\//);
+    }
+  });
+
+  it('keeps the private-source project genuinely repo-less rather than blank', () => {
+    // An empty string is falsy in the card's `project.repo &&` guard, so it would
+    // render the same. It would sail past the https check above, though, and it
+    // reads as an unfinished field rather than a decision.
+    for (const p of projects) {
+      expect(p.repo).not.toBe('');
     }
   });
 
