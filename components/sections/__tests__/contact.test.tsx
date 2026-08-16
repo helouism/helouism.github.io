@@ -5,6 +5,14 @@ import Contact from '@/components/sections/Contact';
 import { socials } from '@/content/socials';
 
 describe('Contact', () => {
+  it('renders the channels as a semantic list', () => {
+    const { container } = render(<Contact />);
+    const list = container.querySelector('section#contact ul');
+    expect(list).toBeTruthy();
+    expect(list!.querySelectorAll(':scope > li')).toHaveLength(socials.length);
+    expect(list).toHaveAttribute('role', 'list');
+  });
+
   it('anchors the contact section', () => {
     const { container } = render(<Contact />);
     expect(container.querySelector('section#contact')).toBeTruthy();

@@ -12,6 +12,7 @@ export default function Projects() {
 
         <Box
           component="ul"
+          role="list"
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },

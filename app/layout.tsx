@@ -23,8 +23,11 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Hendrik Louis Mahdi — IT Support & Infrastructure',
+  // The one string on the site the subject never sees rendered — it is what
+  // Google and LinkedIn show. It must not claim a title the page itself does
+  // not support: the actual role is "L1 IT Support / Helpdesk — Infra & Apps".
   description:
-    'L1 IT Support and infrastructure engineer in Tangerang Selatan. Windows, Linux, VMware, Proxmox, MySQL, PostgreSQL, and Laravel application support.',
+    'L1 IT Support and helpdesk for infrastructure and applications, based in Tangerang Selatan. Windows, Linux, VMware, Proxmox, MySQL, PostgreSQL, and Laravel application support.',
   authors: [{ name: 'Hendrik Louis Mahdi' }],
 };
 

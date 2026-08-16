@@ -35,6 +35,7 @@ export const skillGroups: SkillGroup[] = [
   {
     name: 'Development',
     items: [
+      'HTML/CSS',
       'PHP',
       'Laravel',
       'CodeIgniter 4',

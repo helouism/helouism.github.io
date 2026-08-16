@@ -38,7 +38,9 @@ export type Education = {
   degree: string;
   school: string;
   period: string;
+  // `note` is the short badge beside the years (a GPA); `description` is prose.
   note?: string;
+  description?: string;
 };
 
 export type SkillGroup = {

@@ -11,7 +11,11 @@ export default function Experience() {
       <Container maxWidth="lg">
         <SectionHeading index={4} title="Experience" comment="// where the tickets come from" />
 
-        <Box component="ol" sx={{ display: 'grid', gap: 3, listStyle: 'none', m: 0, p: 0 }}>
+        <Box
+          component="ol"
+          role="list"
+          sx={{ display: 'grid', gap: 3, listStyle: 'none', m: 0, p: 0 }}
+        >
           {experience.map((job) => (
             <Box
               component="li"

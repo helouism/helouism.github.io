@@ -75,6 +75,7 @@ describe('Experience', () => {
     const list = container.querySelector('section#experience ol');
     expect(list).toBeTruthy();
     expect(list!.querySelectorAll(':scope > li')).toHaveLength(experience.length);
+    expect(list).toHaveAttribute('role', 'list');
   });
 });
 
@@ -107,5 +108,15 @@ describe('Education', () => {
     const list = container.querySelector('section#education ul');
     expect(list).toBeTruthy();
     expect(list!.querySelectorAll(':scope > li')).toHaveLength(education.length);
+    expect(list).toHaveAttribute('role', 'list');
+  });
+
+  it('renders the description of every entry that has one', () => {
+    render(<Education />);
+    const described = education.filter((e) => e.description);
+    expect(described.length).toBeGreaterThan(0);
+    for (const e of described) {
+      expect(screen.getByText(e.description!)).toBeInTheDocument();
+    }
   });
 });

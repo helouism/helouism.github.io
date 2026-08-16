@@ -12,6 +12,7 @@ export default function Education() {
 
         <Box
           component="ul"
+          role="list"
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
@@ -39,6 +40,11 @@ export default function Education() {
               <Typography sx={{ color: 'text.secondary', fontSize: '0.9rem', mb: 1.5 }}>
                 {e.school}
               </Typography>
+              {e.description && (
+                <Typography sx={{ color: 'text.secondary', fontSize: '0.9rem', mb: 1.5 }}>
+                  {e.description}
+                </Typography>
+              )}
               <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
                 <Typography
                   sx={{

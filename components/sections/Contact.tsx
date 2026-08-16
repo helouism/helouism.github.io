@@ -54,6 +54,7 @@ export default function Contact() {
 
         <Box
           component="ul"
+          role="list"
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },

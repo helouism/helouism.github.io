@@ -45,6 +45,25 @@ describe('Navbar', () => {
     expect(screen.getByRole('banner')).toBeInTheDocument();
   });
 
+  it('puts the section links inside a navigation landmark', () => {
+    // The old Bootstrap markup gave this for free. Without it the landmark rotor
+    // offers banner/main/contentinfo and no way to reach the section links.
+    renderWithTheme(<Navbar />);
+    const nav = screen.getByRole('navigation', { name: /main/i });
+    for (const item of navItems) {
+      expect(nav.querySelector(`a[href="#${item.id}"]`)).toBeTruthy();
+    }
+  });
+
+  it('exposes the section links as a list of the right length', () => {
+    // `list-style: none` makes WebKit drop the implicit role, so the role has to
+    // be explicit for the "list, 5 items" announcement to survive.
+    renderWithTheme(<Navbar />);
+    const list = screen.getByRole('list');
+    expect(list.tagName).toBe('UL');
+    expect(list.querySelectorAll(':scope > li')).toHaveLength(navItems.length);
+  });
+
   it('constrains its content with the same Container as the page sections', () => {
     const nav = renderWithTheme(<Navbar />);
     const section = renderWithTheme(<About />);

@@ -62,10 +62,30 @@ describe('Projects', () => {
   });
 
   it('gives the featured project a wider grid span', () => {
+    // Asserting the emitted declaration, not the `data-featured` attribute that
+    // drives it: both attributes come off the same object, so an attribute check
+    // stays green even if the `gridColumn` line is deleted outright. The span
+    // lives behind an `md` media query, so computed style in jsdom is no use —
+    // the emotion stylesheet is the only place it is observable.
     const { container } = render(<Projects />);
+    const css = Array.from(document.querySelectorAll('style'))
+      .map((s) => s.textContent ?? '')
+      .join('')
+      .replace(/\s+/g, ' ');
+
+    const declarationsFor = (slug: string) => {
+      const el = container.querySelector(`[data-slug="${slug}"]`);
+      expect(el).toBeTruthy();
+      return Array.from(el!.classList)
+        .flatMap((cls) => Array.from(css.matchAll(new RegExp(`\\.${cls}\\s*\\{([^}]*)\\}`, 'g'))))
+        .map((m) => m[1])
+        .join(';');
+    };
+
     const featured = projects.find((p) => p.featured)!;
-    const el = container.querySelector(`[data-slug="${featured.slug}"]`);
-    expect(el).toHaveAttribute('data-featured', 'true');
+    const plain = projects.find((p) => !p.featured)!;
+    expect(declarationsFor(featured.slug)).toMatch(/grid-column:\s*span 2/);
+    expect(declarationsFor(plain.slug)).not.toMatch(/grid-column:\s*span 2/);
   });
 
   it('renders the cards as a semantic list', () => {
@@ -73,6 +93,7 @@ describe('Projects', () => {
     const list = container.querySelector('section#projects ul');
     expect(list).toBeTruthy();
     expect(list!.querySelectorAll(':scope > li')).toHaveLength(projects.length);
+    expect(list).toHaveAttribute('role', 'list');
   });
 
   it('gives each project a distinguishable source link for assistive tech', () => {

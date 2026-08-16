@@ -78,6 +78,9 @@ describe('Skills', () => {
     const list = container.querySelector('section#skills ul');
     expect(list).toBeTruthy();
     expect(list!.querySelectorAll(':scope > li')).toHaveLength(skillGroups.length);
+    // Explicit: the marker suppression that makes this look like a grid also
+    // strips the implicit list role in WebKit.
+    expect(list).toHaveAttribute('role', 'list');
   });
 
   it('renders no percentage progress bars', () => {

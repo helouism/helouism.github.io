@@ -13,5 +13,9 @@ export const education: Education[] = [
     degree: 'Computer Network Engineering',
     school: 'Prima Unggul Vocational High School — South Tangerang, Indonesia',
     period: '2016 — 2019',
+    // Verbatim from the previous site; it is the earliest evidence for the
+    // infrastructure positioning the rest of the page rests on.
+    description:
+      'Specialized in computer networking technologies, IT fundamentals, and technical infrastructure management.',
   },
 ];

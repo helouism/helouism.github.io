@@ -15,8 +15,12 @@ export default function Skills() {
           comment="// everything here is on the job, not on a course certificate"
         />
 
+        {/* Explicit `role="list"`: WebKit strips the implicit list role from any
+            list whose markers are suppressed, which would silence the "list, 4
+            items" announcement this markup exists to produce. */}
         <Box
           component="ul"
+          role="list"
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
