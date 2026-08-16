@@ -58,6 +58,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             href={project.repo}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Source code for ${project.title}`}
           >
             Source
           </Button>
@@ -69,6 +70,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Live demo of ${project.title}`}
             >
               Live Demo
             </Button>

@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import Projects from '@/components/sections/Projects';
 import ProjectCard from '@/components/ui/ProjectCard';
@@ -66,5 +66,14 @@ describe('Projects', () => {
     const featured = projects.find((p) => p.featured)!;
     const el = container.querySelector(`[data-slug="${featured.slug}"]`);
     expect(el).toHaveAttribute('data-featured', 'true');
+  });
+
+  it('gives each project a distinguishable source link for assistive tech', () => {
+    render(<Projects />);
+    for (const project of projects) {
+      const links = screen.getAllByRole('link', { name: `Source code for ${project.title}` });
+      expect(links).toHaveLength(1);
+      expect(links[0]).toHaveAttribute('href', project.repo);
+    }
   });
 });
