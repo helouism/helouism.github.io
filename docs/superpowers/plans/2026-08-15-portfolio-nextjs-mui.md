@@ -690,6 +690,8 @@ describe('projects', () => {
   it('gives every image non-empty alt text that is not the title of another project', () => {
     for (const p of projects) {
       expect(p.alt.trim().length).toBeGreaterThan(0);
+      const otherTitles = projects.filter((o) => o.slug !== p.slug).map((o) => o.title);
+      expect(otherTitles).not.toContain(p.alt);
     }
   });
 });
@@ -859,7 +861,7 @@ export const projects: Project[] = [
     slug: 'rekomendasi-laptop',
     title: 'Laptop Recommender System',
     description:
-      'A full-stack web application that recommends laptops based on user preferences and requirements, scoring candidates against weighted criteria.',
+      'A full-stack web application that recommends laptops based on user preferences and requirements.',
     image: '/assets/laptop-screenshot.webp',
     alt: 'Screenshot of the Laptop Recommender System interface',
     stack: ['JavaScript', 'jQuery', 'PHP', 'Bootstrap', 'MySQL'],
@@ -877,7 +879,6 @@ export const projects: Project[] = [
     stack: [
       'CodeIgniter 4',
       'CodeIgniter Shield',
-      'PHP',
       'JavaScript',
       'QuillJS',
       'jQuery',
@@ -982,7 +983,7 @@ export const skillGroups: SkillGroup[] = [
       'SLA Management',
       'Incident Triage',
       'Escalation (L2/L3)',
-      'Monitoring',
+      'Server/Network/App Monitoring',
     ],
   },
   {
@@ -997,7 +998,7 @@ export const skillGroups: SkillGroup[] = [
       'TCP/IP',
       'Routers & Switches',
       'Firewall Config',
-      'Hardware Support',
+      'Hardware & Software Support',
     ],
   },
   {
@@ -1014,7 +1015,7 @@ export const skillGroups: SkillGroup[] = [
       'React',
       'Python',
       'Git',
-      'Log Analysis',
+      'Log Analysis & Debugging',
     ],
   },
 ];
