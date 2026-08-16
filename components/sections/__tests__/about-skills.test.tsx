@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import About from '@/components/sections/About';
 import Skills from '@/components/sections/Skills';
+import { profile } from '@/content/profile';
 import { skillGroups } from '@/content/skills';
 
 describe('About', () => {
@@ -18,6 +19,21 @@ describe('About', () => {
   it('does not call him a fresh graduate', () => {
     const { container } = render(<About />);
     expect(container.textContent?.toLowerCase()).not.toContain('fresh graduate');
+  });
+
+  it('renders every fact from the content layer', () => {
+    render(<About />);
+    for (const fact of profile.facts) {
+      expect(screen.getByText(fact.label)).toBeInTheDocument();
+      expect(screen.getByText(fact.value)).toBeInTheDocument();
+    }
+  });
+
+  it('renders the fact card as a definition list', () => {
+    const { container } = render(<About />);
+    expect(container.querySelector('dl')).toBeTruthy();
+    expect(container.querySelectorAll('dt')).toHaveLength(profile.facts.length);
+    expect(container.querySelectorAll('dd')).toHaveLength(profile.facts.length);
   });
 });
 

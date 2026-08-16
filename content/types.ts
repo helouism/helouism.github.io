@@ -6,6 +6,7 @@ export type Profile = {
   location: string;
   promptUser: string;
   resumeHref: string;
+  facts: { label: string; value: string }[];
 };
 
 export type Project = {

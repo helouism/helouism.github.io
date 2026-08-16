@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import SectionHeading from '@/components/ui/SectionHeading';
+import { profile } from '@/content/profile';
 
 export default function About() {
   return (
@@ -38,11 +39,13 @@ export default function About() {
           </Box>
 
           <Box
+            component="dl"
             sx={{
               border: '1px solid',
               borderColor: 'divider',
               borderRadius: 1.5,
               p: 3,
+              m: 0,
               fontFamily: 'var(--font-mono), monospace',
               fontSize: '0.8rem',
               color: 'text.secondary',
@@ -50,17 +53,14 @@ export default function About() {
               gap: 1.25,
             }}
           >
-            {[
-              ['role', 'L1 IT Support'],
-              ['focus', 'Infra · Apps · Helpdesk'],
-              ['based', 'Tangerang Selatan, ID'],
-              ['status', 'open to opportunities'],
-            ].map(([k, v]) => (
-              <Box key={k} sx={{ display: 'flex', gap: 1.5 }}>
-                <Box component="span" sx={{ color: 'primary.main', minWidth: 64 }}>
-                  {k}
+            {profile.facts.map((fact) => (
+              <Box key={fact.label} sx={{ display: 'flex', gap: 1.5 }}>
+                <Box component="dt" sx={{ color: 'primary.main', minWidth: 64, m: 0 }}>
+                  {fact.label}
                 </Box>
-                <Box component="span">{v}</Box>
+                <Box component="dd" sx={{ m: 0 }}>
+                  {fact.value}
+                </Box>
               </Box>
             ))}
           </Box>

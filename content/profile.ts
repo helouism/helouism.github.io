@@ -1,8 +1,10 @@
 import type { Profile } from './types';
 
+const title = 'IT Support & Infrastructure';
+
 export const profile: Profile = {
   name: 'Hendrik Louis Mahdi',
-  title: 'IT Support & Infrastructure',
+  title,
   tagline:
     'L1 support for infrastructure, applications, and the people who depend on both.',
   microCopy: [
@@ -12,4 +14,10 @@ export const profile: Profile = {
   location: 'Tangerang Selatan, Banten, Indonesia',
   promptUser: 'hendrik@infra',
   resumeHref: '/docs/my-cv.pdf',
+  facts: [
+    { label: 'role', value: title },
+    { label: 'focus', value: 'Infra · Apps · Helpdesk' },
+    { label: 'based', value: 'Tangerang Selatan, ID' },
+    { label: 'status', value: 'open to opportunities' },
+  ],
 };
