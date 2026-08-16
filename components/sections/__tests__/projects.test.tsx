@@ -16,7 +16,6 @@ const fixture = (over: Partial<Project> = {}): Project => ({
   alt: 'Screenshot of the fixture',
   stack: ['TypeScript'],
   repo: 'https://github.com/helouism/fixture',
-  featured: false,
   ...over,
 });
 
@@ -88,31 +87,21 @@ describe('Projects', () => {
     }
   });
 
-  it('gives the featured project a wider grid span', () => {
-    // Asserting the emitted declaration, not the `data-featured` attribute that
-    // drives it: both attributes come off the same object, so an attribute check
-    // stays green even if the `gridColumn` line is deleted outright. The span
-    // lives behind an `md` media query, so computed style in jsdom is no use —
-    // the emotion stylesheet is the only place it is observable.
+  it('lays every card out identically', () => {
+    // Equal cards means one shared `sx`, and one shared `sx` means emotion emits
+    // a single class for all of them. So class equality is the assertion: any
+    // per-project layout branch — a wider grid span, a taller image — forks the
+    // generated class name, and this catches it without having to name the
+    // property that carries the hierarchy. A `not.toMatch('span 2')` check would
+    // not; it stays green if the span moves to some other property.
     const { container } = render(<Projects />);
-    const css = Array.from(document.querySelectorAll('style'))
-      .map((s) => s.textContent ?? '')
-      .join('')
-      .replace(/\s+/g, ' ');
+    const cards = Array.from(container.querySelectorAll('[data-slug]'));
+    expect(cards).toHaveLength(projects.length);
+    expect(new Set(cards.map((c) => c.className)).size, 'card classes').toBe(1);
 
-    const declarationsFor = (slug: string) => {
-      const el = container.querySelector(`[data-slug="${slug}"]`);
-      expect(el).toBeTruthy();
-      return Array.from(el!.classList)
-        .flatMap((cls) => Array.from(css.matchAll(new RegExp(`\\.${cls}\\s*\\{([^}]*)\\}`, 'g'))))
-        .map((m) => m[1])
-        .join(';');
-    };
-
-    const featured = projects.find((p) => p.featured)!;
-    const plain = projects.find((p) => !p.featured)!;
-    expect(declarationsFor(featured.slug)).toMatch(/grid-column:\s*span 2/);
-    expect(declarationsFor(plain.slug)).not.toMatch(/grid-column:\s*span 2/);
+    const images = cards.map((c) => c.querySelector('img')!);
+    expect(images.every(Boolean)).toBe(true);
+    expect(new Set(images.map((i) => i.className)).size, 'image classes').toBe(1);
   });
 
   it('renders the cards as a semantic list', () => {

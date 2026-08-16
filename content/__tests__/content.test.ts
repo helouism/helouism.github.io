@@ -48,10 +48,6 @@ describe('projects', () => {
     expect(new Set(slugs).size).toBe(slugs.length);
   });
 
-  it('marks exactly one project as featured', () => {
-    expect(projects.filter((p) => p.featured)).toHaveLength(1);
-  });
-
   it('points every image at a public asset path', () => {
     for (const p of projects) {
       expect(p.image).toMatch(/^\/assets\//);

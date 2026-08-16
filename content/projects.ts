@@ -21,7 +21,6 @@ export const projects: Project[] = [
     ],
     repo: 'https://github.com/helouism/omnilog',
     demo: 'https://omnilog.my.id',
-    featured: true,
   },
   {
     slug: 'thefaucet',
@@ -44,6 +43,5 @@ export const projects: Project[] = [
     ],
     // No `repo`: the source is private. See the Project type.
     demo: 'https://thefaucet.net/',
-    featured: false,
   },
 ];

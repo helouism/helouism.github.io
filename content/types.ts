@@ -21,7 +21,6 @@ export type Project = {
   // an empty string here would render a dead button instead.
   repo?: string;
   demo?: string;
-  featured: boolean;
 };
 
 export type Job = {
