@@ -53,19 +53,25 @@ export default function Contact() {
         <SectionHeading index={6} title="Contact" comment="// no form, just reach out" />
 
         <Box
+          component="ul"
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
             gap: 2,
             maxWidth: 720,
+            listStyle: 'none',
+            m: 0,
+            p: 0,
           }}
         >
           {socials.map((s) => {
             const Icon = icons[s.id] ?? LinkIcon;
             return (
               <Box
+                component="li"
                 key={s.id}
                 sx={{
+                  listStyle: 'none',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 2,

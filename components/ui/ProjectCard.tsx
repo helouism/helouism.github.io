@@ -8,12 +8,18 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import TechChip from '@/components/ui/TechChip';
 import type { Project } from '@/content/types';
 
+// The card is itself the list item of the Projects grid rather than being wrapped
+// in one: the `gridColumn` span has to sit on the grid's direct child, and keeping
+// it on the same element makes the `ul` conversion a pure tag-name change with no
+// layout shift.
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Card
+      component="li"
       data-slug={project.slug}
       data-featured={project.featured ? 'true' : 'false'}
       sx={{
+        listStyle: 'none',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',

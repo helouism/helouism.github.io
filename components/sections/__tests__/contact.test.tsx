@@ -51,6 +51,13 @@ describe('Contact', () => {
     render(<Contact />);
     expect(screen.getByText(/Tangerang Selatan/)).toBeInTheDocument();
   });
+
+  it('renders the contact channels as a semantic list', () => {
+    const { container } = render(<Contact />);
+    const list = container.querySelector('section#contact ul');
+    expect(list).toBeTruthy();
+    expect(list!.querySelectorAll(':scope > li')).toHaveLength(socials.length);
+  });
 });
 
 describe('Contact copy button', () => {

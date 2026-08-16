@@ -68,6 +68,13 @@ describe('Projects', () => {
     expect(el).toHaveAttribute('data-featured', 'true');
   });
 
+  it('renders the cards as a semantic list', () => {
+    const { container } = render(<Projects />);
+    const list = container.querySelector('section#projects ul');
+    expect(list).toBeTruthy();
+    expect(list!.querySelectorAll(':scope > li')).toHaveLength(projects.length);
+  });
+
   it('gives each project a distinguishable source link for assistive tech', () => {
     render(<Projects />);
     for (const project of projects) {

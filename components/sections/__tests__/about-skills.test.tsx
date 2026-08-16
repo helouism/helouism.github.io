@@ -11,9 +11,14 @@ describe('About', () => {
     expect(container.querySelector('section#about')).toBeTruthy();
   });
 
-  it('mentions the current employer', () => {
-    render(<About />);
-    expect(screen.getByText(/Lintas Media Danawa/)).toBeInTheDocument();
+  it('mentions the current employer in the prose', () => {
+    // Scoped to the paragraphs: the fact card now names the employer too, so an
+    // unscoped match would find two nodes. Still fails if the prose drops it.
+    const { container } = render(<About />);
+    const prose = Array.from(container.querySelectorAll('section#about p'))
+      .map((p) => p.textContent)
+      .join(' ');
+    expect(prose).toMatch(/Lintas Media Danawa/);
   });
 
   it('does not call him a fresh graduate', () => {
@@ -34,6 +39,15 @@ describe('About', () => {
     expect(container.querySelector('dl')).toBeTruthy();
     expect(container.querySelectorAll('dt')).toHaveLength(profile.facts.length);
     expect(container.querySelectorAll('dd')).toHaveLength(profile.facts.length);
+  });
+
+  it('renders three fact rows and does not echo the hero title back', () => {
+    // Pinned to the literal 3 on purpose: the assertion above derives its count
+    // from the same array it is checking, so it would stay green if a row were
+    // added back.
+    const { container } = render(<About />);
+    expect(container.querySelectorAll('dd')).toHaveLength(3);
+    expect(screen.queryByText(profile.title)).toBeNull();
   });
 });
 
@@ -57,6 +71,13 @@ describe('Skills', () => {
         expect(screen.getByText(item)).toBeInTheDocument();
       }
     }
+  });
+
+  it('renders the groups as a semantic list', () => {
+    const { container } = render(<Skills />);
+    const list = container.querySelector('section#skills ul');
+    expect(list).toBeTruthy();
+    expect(list!.querySelectorAll(':scope > li')).toHaveLength(skillGroups.length);
   });
 
   it('renders no percentage progress bars', () => {

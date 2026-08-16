@@ -16,14 +16,18 @@ export default function Skills() {
         />
 
         <Box
+          component="ul"
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
             gap: { xs: 4, md: 5 },
+            listStyle: 'none',
+            m: 0,
+            p: 0,
           }}
         >
           {skillGroups.map((group) => (
-            <Box key={group.name}>
+            <Box component="li" key={group.name} sx={{ listStyle: 'none' }}>
               <Typography
                 variant="h3"
                 sx={{

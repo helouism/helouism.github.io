@@ -134,6 +134,29 @@ describe('profile', () => {
       .toLowerCase();
     expect(blob).not.toContain('fresh graduate');
   });
+
+  it('carries three facts', () => {
+    expect(profile.facts).toHaveLength(3);
+  });
+
+  it('spends no fact row repeating the hero title', () => {
+    expect(profile.facts.map((f) => f.value)).not.toContain(profile.title);
+  });
+
+  it('names the current employer, sourced from the experience content', () => {
+    // Derived, not retyped: if the current role in `experience.ts` changes, the
+    // fact card follows instead of silently going stale.
+    const fact = profile.facts.find((f) => f.label === 'current');
+    expect(fact).toBeDefined();
+    expect(fact!.value).toBe(experience.find((j) => j.current)!.company);
+  });
+
+  it('makes no unverified claim about his job-seeking status', () => {
+    const blob = JSON.stringify(profile.facts).toLowerCase();
+    expect(profile.facts.map((f) => f.label)).not.toContain('status');
+    expect(blob).not.toContain('opportunit');
+    expect(blob).not.toContain('open to');
+  });
 });
 
 describe('education', () => {
