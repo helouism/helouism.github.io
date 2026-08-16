@@ -13,6 +13,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+import LinkIcon from '@mui/icons-material/Link';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { socials } from '@/content/socials';
 import { profile } from '@/content/profile';
@@ -25,12 +26,25 @@ const icons: Record<string, typeof EmailOutlinedIcon> = {
 };
 
 export default function Contact() {
-  const [copied, setCopied] = useState(false);
+  // A message rather than a boolean: a failed copy has to be announced too, and
+  // the counter re-keys the Snackbar so a repeat click re-announces instead of
+  // being swallowed as a no-op state write.
+  const [toast, setToast] = useState<string | null>(null);
+  const [toastCount, setToastCount] = useState(0);
   const email = socials.find((s) => s.id === 'email')!;
 
   async function copyEmail() {
-    await navigator.clipboard.writeText(email.value);
-    setCopied(true);
+    let message: string;
+    try {
+      // Reading `navigator.clipboard` throws outside a secure context, so the
+      // property access belongs inside the try alongside the write.
+      await navigator.clipboard.writeText(email.value);
+      message = 'Copied to clipboard';
+    } catch {
+      message = 'Copy failed — select the address to copy it manually';
+    }
+    setToast(message);
+    setToastCount((n) => n + 1);
   }
 
   return (
@@ -47,7 +61,7 @@ export default function Contact() {
           }}
         >
           {socials.map((s) => {
-            const Icon = icons[s.id];
+            const Icon = icons[s.id] ?? LinkIcon;
             return (
               <Box
                 key={s.id}
@@ -122,10 +136,11 @@ export default function Contact() {
         </Box>
 
         <Snackbar
-          open={copied}
+          key={toastCount}
+          open={toast !== null}
           autoHideDuration={2000}
-          onClose={() => setCopied(false)}
-          message="Copied to clipboard"
+          onClose={() => setToast(null)}
+          message={toast ?? ''}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
         />
       </Container>
