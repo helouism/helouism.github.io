@@ -18,7 +18,7 @@ export const profile: Profile = {
     '// Windows, Linux, macOS — whichever one is on fire',
   ],
   location: 'Tangerang Selatan, Banten, Indonesia',
-  promptUser: 'hendrik@infra',
+  promptUser: 'louis@helouism',
   resumeHref: '/docs/my-cv.pdf',
   // Three rows, each of which says something the hero does not: no `role` row
   // echoing the hero title back, and no claim about job-seeking status — that was

@@ -846,7 +846,7 @@ export const profile: Profile = {
     '// Windows, Linux, macOS — whichever one is on fire',
   ],
   location: 'Tangerang Selatan, Banten, Indonesia',
-  promptUser: 'hendrik@infra',
+  promptUser: 'louis@helouism',
   resumeHref: '/docs/my-cv.pdf',
 };
 ```
@@ -1147,11 +1147,11 @@ describe('TechChip', () => {
 describe('TerminalWindow', () => {
   it('renders the prompt with the user and command', () => {
     render(
-      <TerminalWindow user="hendrik@infra" command="whoami">
+      <TerminalWindow user="louis@helouism" command="whoami">
         <p>output</p>
       </TerminalWindow>,
     );
-    expect(screen.getByText(/hendrik@infra/)).toBeInTheDocument();
+    expect(screen.getByText(/louis@helouism/)).toBeInTheDocument();
     expect(screen.getByText(/whoami/)).toBeInTheDocument();
   });
 

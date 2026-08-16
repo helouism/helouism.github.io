@@ -127,7 +127,7 @@ consistently rather than decoratively.
 ### Motif and anti-templated details
 
 - **Terminal window, used once.** The hero is styled as a terminal: title bar
-  with three dots, a `hendrik@infra:~$` prompt, and the title typed out
+  with three dots, a `louis@helouism:~$` prompt, and the title typed out
   followed by a blinking cursor. This treatment appears in the hero only. A
   motif used once reads as a signature; repeated in every section it reads as a
   gimmick.
