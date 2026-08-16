@@ -11,11 +11,14 @@ export default function Experience() {
       <Container maxWidth="lg">
         <SectionHeading index={4} title="Experience" comment="// where the tickets come from" />
 
-        <Box sx={{ display: 'grid', gap: 3 }}>
+        <Box component="ol" sx={{ display: 'grid', gap: 3, listStyle: 'none', m: 0, p: 0 }}>
           {experience.map((job) => (
             <Box
+              component="li"
               key={job.id}
+              data-current={job.current ? 'true' : undefined}
               sx={{
+                listStyle: 'none',
                 borderLeft: '2px solid',
                 borderColor: job.current ? 'primary.main' : 'divider',
                 pl: { xs: 2.5, md: 4 },
@@ -61,7 +64,23 @@ export default function Experience() {
                 {job.period} · {job.location}
               </Typography>
 
-              <Box component="ul" sx={{ m: 0, pl: 2.5, display: 'grid', gap: 1 }}>
+              {job.summary && (
+                <Typography
+                  sx={{
+                    color: 'text.secondary',
+                    fontSize: '0.925rem',
+                    maxWidth: '68ch',
+                    mb: 2,
+                  }}
+                >
+                  {job.summary}
+                </Typography>
+              )}
+
+              <Box
+                component="ul"
+                sx={{ m: 0, pl: 2.5, display: 'grid', gap: 1, listStyleType: 'disc' }}
+              >
                 {job.bullets.map((bullet) => (
                   <Typography
                     component="li"

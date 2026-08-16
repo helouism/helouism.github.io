@@ -28,6 +28,7 @@ export type Job = {
   location: string;
   period: string;
   contract?: string;
+  summary?: string;
   bullets: string[];
   current: boolean;
 };

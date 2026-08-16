@@ -11,16 +11,22 @@ export default function Education() {
         <SectionHeading index={5} title="Education" comment="// the paper trail" />
 
         <Box
+          component="ul"
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
             gap: 3,
+            listStyle: 'none',
+            m: 0,
+            p: 0,
           }}
         >
           {education.map((e) => (
             <Box
+              component="li"
               key={e.id}
               sx={{
+                listStyle: 'none',
                 border: '1px solid',
                 borderColor: 'divider',
                 borderRadius: 1.5,

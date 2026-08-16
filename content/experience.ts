@@ -9,6 +9,8 @@ export const experience: Job[] = [
     period: 'Oct 2025 — Present',
     contract: 'Contract',
     current: true,
+    summary:
+      'First-level technical support and infrastructure monitoring for internal users and external clients: diagnosing, resolving, and escalating hardware, software, network, and enterprise application issues.',
     bullets: [
       'Manage and track support tickets in ServiceDesk Plus and eBesha CRM to meet SLA targets',
       'Troubleshoot across Windows, Linux, and macOS environments',
