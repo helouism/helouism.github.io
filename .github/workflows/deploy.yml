@@ -21,10 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # node-version-file, not a literal: a hardcoded 20 here silently drifted
+      # from the Node the project is developed on, and jsdom's undici failed to
+      # start a single test worker on the older runtime. .nvmrc is now the one
+      # place the version is written.
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version-file: .nvmrc
           cache: npm
 
       - name: Install dependencies
