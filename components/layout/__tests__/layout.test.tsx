@@ -23,7 +23,7 @@ describe('Navbar', () => {
     renderWithTheme(<Navbar />);
     for (const item of navItems) {
       const link = screen.getByRole('link', { name: item.label });
-      expect(link).toHaveAttribute('href', `#${item.id}`);
+      expect(link).toHaveAttribute('href', `/#${item.id}`);
     }
   });
 
@@ -51,7 +51,7 @@ describe('Navbar', () => {
     renderWithTheme(<Navbar />);
     const nav = screen.getByRole('navigation', { name: /main/i });
     for (const item of navItems) {
-      expect(nav.querySelector(`a[href="#${item.id}"]`)).toBeTruthy();
+      expect(nav.querySelector(`a[href="/#${item.id}"]`)).toBeTruthy();
     }
   });
 

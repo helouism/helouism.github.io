@@ -50,7 +50,7 @@ export default function Navbar() {
       <Toolbar disableGutters>
         <Container maxWidth="lg" sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           <Link
-            href="#home"
+            href="/#home"
             underline="none"
             sx={{
               fontFamily: 'var(--font-mono), monospace',
@@ -77,7 +77,7 @@ export default function Navbar() {
               {navItems.map((item) => (
                 <Box component="li" key={item.id} sx={{ listStyle: 'none' }}>
                   <Link
-                    href={`#${item.id}`}
+                    href={`/#${item.id}`}
                     underline="none"
                     sx={{
                       display: 'block',
@@ -125,7 +125,7 @@ export default function Navbar() {
           <List role="list">
             {navItems.map((item) => (
               <ListItem key={item.id} disablePadding>
-                <ListItemButton component="a" href={`#${item.id}`}>
+                <ListItemButton component="a" href={`/#${item.id}`}>
                   <ListItemText primary={item.label} />
                 </ListItemButton>
               </ListItem>

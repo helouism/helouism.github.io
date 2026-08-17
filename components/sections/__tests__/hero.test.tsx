@@ -18,7 +18,7 @@ describe('Hero', () => {
     render(<Hero />);
     expect(screen.getByRole('link', { name: /view projects/i })).toHaveAttribute(
       'href',
-      '#projects',
+      '/#projects',
     );
   });
 
