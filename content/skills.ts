@@ -5,12 +5,18 @@ export const skillGroups: SkillGroup[] = [
     name: 'Support & Operations',
     items: [
       'L1 Helpdesk',
+      'ServiceNow',
       'ServiceDesk Plus',
       'eBesha CRM',
       'SLA Management',
       'Incident Triage',
       'Escalation (L2/L3)',
       'Server/Network/App Monitoring',
+      'Grafana',
+      'Prometheus',
+      'PRTG',
+      'SolarWinds',
+      'Pandora FMS',
     ],
   },
   {
@@ -30,7 +36,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     name: 'Databases',
-    items: ['MySQL', 'PostgreSQL', 'SQL', 'Navicat'],
+    items: ['MySQL', 'PostgreSQL', 'SQLite', 'Oracle', 'SQL', 'Navicat', 'DBeaver'],
   },
   {
     name: 'Development',
@@ -42,6 +48,7 @@ export const skillGroups: SkillGroup[] = [
       'JavaScript',
       'React',
       'Python',
+      'Django',
       'Git',
       'Log Analysis & Debugging',
     ],
